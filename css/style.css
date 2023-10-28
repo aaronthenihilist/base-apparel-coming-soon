@@ -8,10 +8,10 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    min-height: 100vh;
 }
 
 main {
-    min-height: 100vh;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -168,7 +168,7 @@ footer {
     margin-bottom: 4.1rem;
 }
 
-footer p {
+.attribution {
     text-align: center;
     line-height: 1.5rem;
     color: hsl(0, 36%, 70%);
@@ -177,4 +177,51 @@ footer p {
 footer a {
     font-weight: 700;
     color: hsl(0, 6%, 24%);
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        max-width: 375px;
+    }
+
+    .main-item:first-of-type {
+        order: 2;
+        padding: 2rem;
+        text-align: center;
+        width: calc(100% - 4rem);
+    }
+
+    .main-item:last-of-type {
+        order: 1;
+        margin-top: 5rem;
+    }
+
+    .main-item:last-of-type img {
+        width: 100%;
+        object-fit: cover;
+        height: 325px;
+        object-position: top;
+    }
+
+    .logo {
+        position: absolute;
+        top: -2.25rem;
+        max-width: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        line-height: 2.25rem;
+        margin-top: 2rem;
+    }
+
+    main p {
+        font-size: .9rem;
+        max-width: 100%;
+    }
+
+    form {
+        margin-top: 2rem;
+    }
 }
