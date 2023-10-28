@@ -27,7 +27,7 @@ main {
     padding: 0 10rem 10rem 10rem;
     background-image: url(../images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     background-size: cover;
 }
 
@@ -36,13 +36,13 @@ main {
     color: hsl(0, 36%, 70%);
 }
 
-.main-item:first-of-type img {
+.logo {
     max-width: 156px;
     margin-top: 4.1rem;
 }
 
 .main-item:last-of-type img {
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
     height: 100%;
 }
@@ -67,6 +67,7 @@ input[type=email] {
             hsl(0, 0%, 100%),
             hsl(0, 100%, 98%));
     font-size: 1rem;
+    color: hsl(0, 6%, 24%);
 }
 
 input[type=email]:focus {
@@ -77,6 +78,17 @@ input[type=email]:focus {
 
 input[type=email]::placeholder {
     color: hsl(0, 36%, 70%, .5);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: hsl(0, 6%, 24%);
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #fff;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 button[type=submit] {
@@ -92,6 +104,44 @@ button[type=submit] {
     color: #fff;
     cursor: pointer;
     font-size: 1rem;
+}
+
+button[type=submit]:hover {
+    background: linear-gradient(135deg,
+            hsl(0, 80%, 86%),
+            hsl(0, 80%, 86%));
+    box-shadow: 0 10px 20px 0 hsl(0, 36%, 70%, .75);
+}
+
+.error-icon {
+    position: absolute;
+    right: 6.5rem;
+    top: .75rem;
+    display: none;
+}
+
+.error-msg {
+    display: none;
+    margin-left: 1.5rem;
+    margin-top: .5rem;
+    color: hsl(0, 93%, 68%) !important;
+    font-size: .9rem;
+}
+
+.success-icon {
+    position: absolute;
+    right: 6.5rem;
+    top: .75rem;
+    display: none;
+    width: 1.5rem;
+}
+
+.success-msg {
+    display: none;
+    margin-left: 1.5rem;
+    margin-top: .5rem;
+    color: hsl(148deg 58.9% 46.38%) !important;
+    font-size: .9rem;
 }
 
 h1 {
